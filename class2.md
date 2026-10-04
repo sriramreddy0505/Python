@@ -1,4 +1,18 @@
-            data types?
+  what is variables ?
+  
+A variable is a name used to store or refer to a value in a Python program.
+>we can understand the variable simply can name is string and age is integer and we don't wanna mention the names
+>and also "_"before variable  is coming like this this is not axecuted and number also not executed #_name="sriram not valid
+#4namw="reddy"    not valid
+#name 4, name-string, name_, name4 string       those are valid
+
+> what is an identifier?
+   
+An identifier is the name given to a programming element such as a variable, function, class, etc.
+  name ="sriram" in this name is the identifier
+  Because name is the name used to identify the variable.
+      data types?
+      
 >A data type tells Python what kind of data a variable is storing.
 >age = 25
 name = "Sriram"
