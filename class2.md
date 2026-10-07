@@ -2,7 +2,7 @@
   
 A variable is a name used to store or refer to a value in a Python program.
 >we can understand the variable simply can name is string and age is integer and we don't wanna mention the names
->and also "_"before variable  is coming like this this is not axecuted and number also not executed #_name="sriram not valid
+>and also "_"before variable  is coming like  this is not axecuted and number also not executed #_name="sriram not valid
 #4namw="reddy"    not valid
 #name 4, name-string, name_, name4 string       those are valid
 
