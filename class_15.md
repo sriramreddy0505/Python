@@ -175,8 +175,7 @@ Deletes a specified key-value entry:
 d = {"a": 10, "b": 20}
 del d["a"]
 print(d)
-output:
-{'b': 20}  
+output: {'b': 20}  
  
 
 
