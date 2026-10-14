@@ -24,6 +24,36 @@
   syntax:
   dictionary.setdefault(key, default_value)
 
+  if Key already exists
+  student = {
+    "name": "Sriram",
+    "age": 22
+}
+
+result = student.setdefault("age", 25)
+print(result)
+print(student)
+output:
+22
+{'name': 'Sriram', 'age': 22}
+Why did it return 22, not 25? Because "age" already exists, so setdefault() does not replace its value.
+ Key does not exist
+ student = {
+    "name": "Sriram",
+    "age": 22
+}
+
+result = student.setdefault("course", "Python")
+print(result)
+print(student)
+output:
+Python
+{'name': 'Sriram', 'age': 22, 'course': 'Python'}
+Python checks whether "course" exists.
+It does not exist.
+Python adds "course": "Python".
+It returns "Python".
+
 
 
   dict.update()
@@ -59,6 +89,7 @@ Notice that update() modifies dict1 directly. It does not automatically create a
       print("marks" in student) #false
 
       Sorting dictionary keys by their length:
+      
     The built-in sorted() function returns a sorted list. You can use its key parameter to sort dictionary keys according to their lengths.
     syntax:
     sorted(dictionary, key=len)
@@ -66,7 +97,7 @@ Notice that update() modifies dict1 directly. It does not automatically create a
     "name": "Ravi",
     "age": 20,
     "course": "Python",
-    "city": "Delhi"
+    "city": "Delhi"                  # this is ascending order
 }
 
 result = sorted(student, key=len)
@@ -79,5 +110,77 @@ print(result)
     "name" and "city" each have 4 characters.
      "course" has 6 characters.
     Python returns a list sorted by key length.
+
+    desending order is :
+    result = sorted(student, key=len, reverse=True)
+    print(result)
+
+
+     Sorting dictionary values:
+There are different ways to sort values, depending on what you want.
+Sort only the values
+     marks = {
+    "Ravi": 85,
+    "Sriram": 95,
+    "Kiran": 75
+}
+result = sorted(marks.values())
+print(result)
+output:[75, 85, 95]
+
+Sort dictionary entries by their values:
+Suppose you want each student's name alongside their marks, sorted from lowest to highest.
+
+marks = {
+    "Ravi": 85,
+    "Sriram": 95,
+    "Kiran": 75
+}
+result = sorted(marks.items(), key=lambda item: item[1])
+print(result)
+ #  [('Kiran', 75), ('Ravi', 85), ('Sriram', 95)]
+ Here, item[1] means the value, so Python sorts by marks.
+
+ sorted() returns a list; it does not automatically change the original dictionary's order.
+
+ Finding the type of a dictionary:
+ Python provides the type() function to identify the data type of an object.
+
+ student = {
+    "name": "Sriram",
+    "age": 22
+}
+print(type(student))  # <class 'dict'>
+ and when u use only some separate values print(type(student["name"])) its will be show the this is string so its shows to the string 
+ ex:
+ student = {
+    "name": "Sriram",
+    "age": 22,
+    "marks": 95.5
+}
+
+print(type(student))
+print(type(student["name"]))
+print(type(student["age"]))
+print(type(student["marks"]))
+output:
+<class 'dict'>
+<class 'str'>
+<class 'int'>
+<class 'float'>
+
+
+del
+Deletes a specified key-value entry:
+d = {"a": 10, "b": 20}
+del d["a"]
+print(d)
+output:
+{'b': 20}  
+ 
+
+
+
+    
     
     
