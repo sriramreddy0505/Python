@@ -1,0 +1,169 @@
+    1. What is OOP in Python?
+OOP stands for Object-Oriented Programming.
+It is a programming approach in which we organize code using classes and objects.
+Think about a real-world example: a car.
+A car has properties and behaviors:
+- Properties: brand, color, speed, price.
+- Behaviors: start, stop, accelerate.
+
+ex: car using a class
+class Car:
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+
+    def start(self):
+        print("The car is starting")
+
+    def stop(self):
+        print("The car is stopping")
+
+
+car1 = Car("Toyota", "White")
+
+print(car1.brand)
+print(car1.color)
+
+car1.start()
+car1.stop()
+#
+Toyota
+White
+The car is starting
+The car is stopping
+
+          2. What is encapsulation?
+Encapsulation means combining data (attributes) and the methods that work on that data inside a class. It also helps control how that data is accessed or changed.
+ex: class BankAccount:
+    def __init__(self, name, balance):
+        self.name = name
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance = self.balance + amount
+
+    def show_balance(self):
+        print("Balance:", self.balance)
+
+
+# Creating an object
+account = BankAccount("Ravi", 1000)
+
+# Calling methods
+account.deposit(500)
+account.show_balance()
+output:
+balance:1500
+if  this code can be 
+1. class BankAccount: creates a class.
+2. __init__() initializes the account name and balance.
+3. self.name and self.balance store the object's data.
+4. deposit() changes the balance.
+5. show_balance() displays the balance.
+6. account = BankAccount("Ravi", 1000) creates an object.
+7. account.deposit(500) adds ₹500 to the balance.
+if any - is there it will be conme to the invalid
+
+
+ 3. What is data hiding?
+Data hiding means restricting or discouraging direct access to internal data so that it can be accessed or modified through controlled methods.
+
+self.__balance = balance
+
+The double underscore triggers name mangling, making accidental direct access harder.
+
+            4. Public, protected, and private attributes in Python
+In Python, these are commonly called access levels or access conventions. Python does not enforce them exactly like some other languages, such as Java.
+              A. Public attributes
+Public attributes can be accessed from inside and outside the class.
+ ex: class Student:
+    def __init__(self):
+        self.name = "Ravi"
+
+
+student = Student()
+print(student.name)
+# ravi
+Here, name is public because it has no leading underscore.
+Use public attributes when direct access is appropriate.
+      B. Protected attributes
+A single leading underscore (_) means the attribute is intended for internal use within the class and its subclasses.
+ex: class Animal:
+    def __init__(self):
+        self._age = 5
+
+
+class Dog(Animal):
+    def show_age(self):
+        print(self._age)
+
+
+dog = Dog()
+dog.show_age()
+output:5
+The subclass Dog can access _age.
+Python still permits this:
+print(dog._age)
+It is a convention, not a strict access restriction. The underscore signals: "This is intended for internal use."
+   C. Private attributes
+A double leading underscore (__) triggers name mangling.
+ex: class Student:
+    def __init__(self):
+        self.__marks = 95
+
+    def show_marks(self):
+        print(self.__marks)
+
+
+student = Student()
+student.show_marks()
+output:95
+
+  5. What is inheritance?
+Inheritance allows one class to acquire or extend the attributes and methods of another class.
+The class being inherited from is called the parent class, base class, or superclass.
+The class that inherits is called the child class, derived class, or subclass.
+
+ex: A dog is an animal. Both dogs and other animals can eat, but a dog can also bark.
+Instead of writing the eat() method separately for every animal, we can put it in the parent class.
+
+class Animal:
+    def eat(self):
+        print("Animal is eating")
+
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog is barking")
+dog = Dog()
+
+dog.eat()
+dog.bark()  
+output:
+Animal is eating
+Dog is barking
+and mainly Animal is the parent class.
+Dog is the child class.
+Dog inherits eat() from Animal.
+Dog defines its own bark() method.
+
+   Why do we use inheritance?
+1. Code reusability: Reuse methods and attributes already defined in a parent class.
+2. Less duplication: Avoid writing the same code in multiple classes.
+3. Easy maintenance: A shared implementation can be updated in one place.
+4. Extensibility: Add new features to a child class.
+5. Polymorphism: Different child classes can implement a common method in their own ways.
+
+6. Types of inheritance in Python
+Python supports several inheritance patterns.
+    1. Single inheritance
+     One child inherits from one parent.
+     2. Multiple inheritance
+     One child inherits from two or more parent classes.
+     3. Multilevel inheritance
+       A class inherits from a class that itself inherits from another class.
+     4. Hierarchical inheritance
+     Multiple child classes inherit from one parent.  
+     
+
+
