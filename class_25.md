@@ -154,7 +154,11 @@ Dog defines its own bark() method.
 4. Extensibility: Add new features to a child class.
 5. Polymorphism: Different child classes can implement a common method in their own ways.
 
-6. Types of inheritance in Python
+         6. What is hybrid inheritance?
+Hybrid inheritance is a combination of two or more types of inheritance in one class hierarchy.
+super() returns a proxy that allows access to methods in the next class in the Method Resolution Order.
+
+7. Types of inheritance in Python
 Python supports several inheritance patterns.
     1. Single inheritance
      One child inherits from one parent.
@@ -163,7 +167,29 @@ Python supports several inheritance patterns.
      3. Multilevel inheritance
        A class inherits from a class that itself inherits from another class.
      4. Hierarchical inheritance
-     Multiple child classes inherit from one parent.  
+     Multiple child classes inherit from one parent.
+                        8. What is the super() keyword in Python?
+     The super() function is used to access methods from a parent class inside a child class.
+     It is especially useful when a child class wants to reuse the parent's constructor (__init__()) or another method without writing the same code again.
+ex:class Parent:
+    def show(self):
+        print("This is the parent class")
+
+
+class Child(Parent):
+    def display(self):
+        super().show()
+        print("This is the child class")
+
+
+obj = Child()
+obj.display()
+output:
+This is the parent class
+This is the child class
+
+Without super(): You would need to initialize the parent's attributes yourself or call the parent explicitly, which can make code harder to maintain.
+
      
 
 
