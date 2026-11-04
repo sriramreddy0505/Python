@@ -70,3 +70,56 @@ drop=True removes the old index instead of adding it as a column.
  - set_index() converts a column into an index.
 - reset_index() converts the existing index back into a column (unless drop=True).
   
+       11. MultiIndex
+Meaning: MultiIndex means having more than one index level.
+In simple words, you can use multiple columns together as an index.
+           12.df.loc[]
+Meaning: Selects rows and columns using index labels and column names.
+df.loc[row_label, column_label]
+ex:print(df.loc[0])
+Returns the first row (index label 0).
+Important: loc includes the ending label when slicing.
+loc means Location based on labels.
+It is used to select particular rows and columns using their labels.
+In simple words, if you want to get one  row's information or only the Salary column, you can use loc.
+       13. df.iloc[]
+Very important
+What is iloc?
+iloc means Integer Location.
+It selects rows and columns based on their numerical positions.
+Remember:
+- loc = Labels.
+- iloc = Positions.
+- syntax:df.iloc[row_position, column_position]
+- ex: select 1st row
+- print(df.iloc[0])
+then we can got the index of 0 both columna and rows
+   14. df.at[]
+What is at?
+at is used to access one particular cell using row and column labels.
+It is similar to loc, but it is specifically designed for accessing a single value.
+syntax:df.at[row_label, column_label]
+When do we use at?
+When we want to read or update just one particular cell using labels.
+         18. df.iat[]
+What is iat?
+iat is used to access one particular cell using integer positions.
+It is similar to iloc, but it is designed for accessing one value.
+syntax:df.iat[row_position, column_position]
+        19. df.query()
+What is query?
+query() is used to filter rows based on conditions.
+In simple words, suppose you have 1000 employee records, but you want only employees whose salary is greater than ₹30,000.
+You can use query().
+syntax:df.query("condition")
+When do we use query()?
+- Employee salary analysis.
+- Student marks analysis.
+- Stock market data filtering.
+- Sales data analysis.
+-  20. df.filter()
+What is filter?
+filter() is used to select specific rows or columns based on their labels.
+Important: filter() does not filter rows based on conditions like Age greater than 25.
+select one row
+print(df.filter(items=["Name"]))
