@@ -62,33 +62,6 @@ so index of 2 is starting from the 30 onwards and after index of 2 is one 20 is 
    print(names) #['Krishna', 'Sriram', 'Anil', 'Ram']
    and this is descending order and which sentence have highest length then start bigining
    
-     pop() — Remove an item
-
-     pop() removes an item from a list and returns the removed item.
-     numbers = [10, 20, 30, 40]
-    x = numbers.pop()
-   print(x)
-   (numbers)
-#40
-[10, 20, 30]
-
-By default, pop() removes the last item.
-pop(index)
-
-numbers = [10, 20, 30, 40]
-x = numbers.pop(1)
-print(x)
-print(numbers) #20
-[10, 30, 40]  because index 1 is contain 20 and Remove the item at index 1.
-
-popleft()
-
-popleft() is not a normal list method.
-It belongs to Python's deque from the collections module.
-numbers = deque([10, 20, 30, 40])
-numbers.popleft()
-print(numbers) #deque([20, 30, 40])
-its remove the 1st item 
 
 
    
